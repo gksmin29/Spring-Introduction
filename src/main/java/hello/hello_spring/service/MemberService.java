@@ -8,8 +8,15 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
+    //원래는 이렇게 정의되어 있었으나, test 코드의 repository와 실제 코드의 repository가 달라지는 것을 막기 위하여
+    //아래의 코드처럼 repository를 만들기만 하고, 내용은 생성자로 주입받게 수정.
+    //private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
 
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    //memberRepository를 외부에서 넣어주도록 변경
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     //회원가입
     public long join(Member member) {
