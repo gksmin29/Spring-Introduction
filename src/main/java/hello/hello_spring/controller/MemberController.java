@@ -2,6 +2,7 @@ package hello.hello_spring.controller;
 
 import hello.hello_spring.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 //controller 어노테이션이 있으면
