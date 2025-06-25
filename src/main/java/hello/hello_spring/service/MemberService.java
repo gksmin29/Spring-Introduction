@@ -3,10 +3,14 @@ package hello.hello_spring.service;
 import hello.hello_spring.domain.Member;
 import hello.hello_spring.repository.MemberRepository;
 import hello.hello_spring.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemberService {
     //원래는 이렇게 정의되어 있었으나, test 코드의 repository와 실제 코드의 repository가 달라지는 것을 막기 위하여
     //아래의 코드처럼 repository를 만들기만 하고, 내용은 생성자로 주입받게 수정.
@@ -14,6 +18,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
 
     //memberRepository를 외부에서 넣어주도록 변경
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

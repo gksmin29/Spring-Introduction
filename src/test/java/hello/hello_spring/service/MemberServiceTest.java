@@ -19,7 +19,7 @@ class MemberServiceTest {
     //원래는 같은 repository로 테스트 하는 게 맞다.
 
 
-    //따라서 이렇게 DE방식으로 해결한다.
+    //따라서 이렇게 DI방식으로 해결한다.
     //각각 인스턴스를 생성한 후
     MemberService memberService;
     MemoryMemberRepository memberRepository;
